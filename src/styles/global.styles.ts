@@ -1,4 +1,5 @@
 import { palette } from "./colors";
+import "./fonts";
 
 export const shadowLight = {
   subtle: "0px 4px 8px rgba(62, 67, 73, 0.2)",
