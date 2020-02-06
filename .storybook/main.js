@@ -19,7 +19,8 @@ module.exports = {
       }
     },
     "@storybook/addon-actions",
-    "@storybook/addon-links"
+    "@storybook/addon-links",
+    "@storybook/addon-docs"
   ],
   webpackFinal: async config => {
     config.module.rules.push({
