@@ -31,11 +31,11 @@ export const muiSelect = {
   option: {
     default: {},
     focused: {
-      backgroundColor: palette["turquioes"],
+      backgroundColor: palette["turquiose"],
       color: palette["white-base"]
     },
     selected: {
-      backgroundColor: palette["turquioes"],
+      backgroundColor: palette["turquiose"],
       color: palette["white-base"]
     },
     checkbox: {

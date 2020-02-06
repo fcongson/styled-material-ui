@@ -44,5 +44,5 @@ export const palette = {
   tiffany: "#AEE0DB",
   green: "#28A47D",
   purple: "#46457D",
-  turquioes: "#196E8F"
+  turquiose: "#196E8F"
 };
