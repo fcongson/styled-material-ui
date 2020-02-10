@@ -1,6 +1,5 @@
 import { withStyles } from '@material-ui/core'
-import { palette } from './colors'
-import { icon, input, select, tag } from './global.styles'
+import { checkbox, icon, input, select, tag } from './global.styles'
 
 export const MaterialStyles = withStyles({
   '@global': {
@@ -26,22 +25,20 @@ export const MaterialStyles = withStyles({
     '.MuiAutocomplete-listbox': select.options.item.text,
     '.MuiAutocomplete-option': {
       '& span.unchecked': {
-        ...select.options.item.checkbox,
-        border: `2px solid ${palette['grey-base']}`,
-        backgroundColor: palette['grey-base']
+        ...checkbox.default,
+        ...checkbox.unchecked
       },
       '& span.checked': {
-        ...select.options.item.checkbox,
-        border: `2px solid ${palette['turquiose']}`,
-        backgroundColor: palette['turquiose']
+        ...checkbox.default,
+        ...checkbox.checked
       },
       '&[data-focus="true"], &[aria-selected="true"]': {
         ...select.options.item.selected,
         '& span.unchecked': {
-          border: `2px solid ${palette['turquiose']}`
+          ...checkbox.focused
         },
         '& span.checked': {
-          border: `2px solid ${palette['turquiose']}`
+          ...checkbox.focused
         }
       },
       '&.multiple': {
@@ -50,7 +47,7 @@ export const MaterialStyles = withStyles({
           padding: '4px 8px 4px 16px'
         },
         '& .MuiCheckbox-colorSecondary.Mui-checked:hover': {
-          backgroundColor: 'transparent'
+          ...select.options.item.multiple
         }
       }
     },

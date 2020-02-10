@@ -54,7 +54,10 @@ export const select = {
         fontSize: '16px',
         fontWeight: 500
       },
-      default: {},
+      default: {
+        backgroundColor: 'transparent',
+        color: palette['black-base']
+      },
       focused: {
         backgroundColor: palette['turquiose'],
         color: palette['white-base']
@@ -67,23 +70,39 @@ export const select = {
         padding: 0,
         backgroundColor: 'transparent',
         color: palette['black-base']
-      },
-      checkbox: {
-        height: 32,
-        width: 32,
-        boxSizing: 'border-box' as
-          | '-moz-initial'
-          | 'inherit'
-          | 'initial'
-          | 'revert'
-          | 'unset'
-          | 'border-box'
-          | 'content-box'
-          | undefined,
-        borderRadius: 4,
-        transition: transition
       }
     }
+  }
+}
+
+// checkboxes
+
+export const checkbox = {
+  default: {
+    height: 32,
+    width: 32,
+    boxSizing: 'border-box' as
+      | '-moz-initial'
+      | 'inherit'
+      | 'initial'
+      | 'revert'
+      | 'unset'
+      | 'border-box'
+      | 'content-box'
+      | undefined,
+    borderRadius: 4,
+    transition: transition
+  },
+  unchecked: {
+    border: `2px solid ${palette['grey-base']}`,
+    backgroundColor: palette['grey-base']
+  },
+  checked: {
+    border: `2px solid ${palette['turquiose']}`,
+    backgroundColor: palette['turquiose']
+  },
+  focused: {
+    border: `2px solid ${palette['turquiose']}`
   }
 }
 
