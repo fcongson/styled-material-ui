@@ -6,7 +6,12 @@ export default {
   component: CountrySelect
 }
 
-export const Default = () => {
+export const Single = () => {
   const [value, setValue] = useState('ATA')
   return <CountrySelect value={value} onChange={value => setValue(value)} />
+}
+
+export const Multiple = () => {
+  const [values, setValues] = useState(['ATA'])
+  return <CountrySelect value={values} onChange={values => setValues(values)} multiple />
 }
