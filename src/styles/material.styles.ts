@@ -1,17 +1,17 @@
 import { withStyles } from '@material-ui/core'
 import { palette } from './colors'
-import { muiInput, muiSelect } from './global.styles'
+import { icon, input, select, tag } from './global.styles'
 
 export const MaterialStyles = withStyles({
   '@global': {
     '.MuiAutocomplete-inputRoot[class*="MuiInput-root"]': {
-      ...muiSelect.size,
-      ...muiSelect.spacing,
-      ...muiSelect.text.input,
+      ...input.size,
+      ...input.spacing,
+      ...input.text,
       '& .MuiAutocomplete-input:first-child': {
-        ...muiSelect.size,
-        ...muiSelect.spacing,
-        ...muiSelect.text.input,
+        ...input.size,
+        ...input.spacing,
+        ...input.text,
         paddingRight: 60
       },
       '&.multiple': {
@@ -19,24 +19,24 @@ export const MaterialStyles = withStyles({
       }
     },
     '.MuiInput-underline': {
-      '&:not(.Mui-disabled):before, &:hover:not(.Mui-disabled):before': muiInput.underline.default,
-      '&:after': muiInput.underline.focused
+      '&:not(.Mui-disabled):before, &:hover:not(.Mui-disabled):before': input.underline.default,
+      '&:after': input.underline.focused
     },
-    '.MuiAutocomplete-paper': muiSelect.options,
-    '.MuiAutocomplete-listbox': muiSelect.text.option,
+    '.MuiAutocomplete-paper': select.options.container,
+    '.MuiAutocomplete-listbox': select.options.item.text,
     '.MuiAutocomplete-option': {
       '& span.unchecked': {
-        ...muiSelect.option.checkbox,
+        ...select.options.item.checkbox,
         border: `2px solid ${palette['grey-base']}`,
         backgroundColor: palette['grey-base']
       },
       '& span.checked': {
-        ...muiSelect.option.checkbox,
+        ...select.options.item.checkbox,
         border: `2px solid ${palette['turquiose']}`,
         backgroundColor: palette['turquiose']
       },
       '&[data-focus="true"], &[aria-selected="true"]': {
-        ...muiSelect.option.selected,
+        ...select.options.item.selected,
         '& span.unchecked': {
           border: `2px solid ${palette['turquiose']}`
         },
@@ -45,7 +45,7 @@ export const MaterialStyles = withStyles({
         }
       },
       '&.multiple': {
-        ...muiSelect.option.multiple,
+        ...select.options.item.multiple,
         '& .MuiCheckbox-root': {
           padding: '4px 8px 4px 16px'
         },
@@ -55,20 +55,20 @@ export const MaterialStyles = withStyles({
       }
     },
     '.MuiIconButton-root': {
-      '&:hover': muiSelect.icon.button,
-      '& svg': muiSelect.icon.svg
+      '&:hover': icon.button,
+      '& svg': icon.svg
     },
-    '.MuiAutocomplete-clearIndicator': muiSelect.icon.button,
+    '.MuiAutocomplete-clearIndicator': icon.button,
     '.MuiAutocomplete-popupIndicator': {
-      ...muiSelect.icon.button,
+      ...icon.button,
       marginRight: 6
     },
-    '.MuiTouchRipple-rippleVisible': muiSelect.icon.animation,
+    '.MuiTouchRipple-rippleVisible': icon.animation,
     '.MuiChip-root': {
-      ...muiSelect.tag.root,
-      '& svg': muiSelect.tag.svg
+      ...tag.root,
+      '& svg': tag.svg
     },
-    '.MuiChip-label': muiSelect.tag.label,
-    '.MuiChip-deleteIcon': muiSelect.tag.delete
+    '.MuiChip-label': tag.label,
+    '.MuiChip-deleteIcon': tag.delete
   }
 })(() => null)
