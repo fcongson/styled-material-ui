@@ -1,8 +1,7 @@
 import Check from '@material-ui/icons/Check'
 import Close from '@material-ui/icons/Close'
 import * as React from 'react'
-import { palette } from '../styles/colors'
-import { transition } from '../styles/global.styles'
+import { palette, transition } from '../styles'
 
 export const Unchecked = (
   <span className='unchecked'>

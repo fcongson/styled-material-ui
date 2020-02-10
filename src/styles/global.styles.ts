@@ -1,14 +1,7 @@
+import { transition } from './animations'
 import { palette } from './colors'
 import './fonts'
-
-export const shadowLight = {
-  subtle: '0px 4px 8px rgba(62, 67, 73, 0.2)',
-  strong: '0px 8px 16px rgba(62, 67, 73, 0.25)',
-  perspective: '0px 6px 12px rgba(62, 67, 73, 0.25)',
-  distant: '0px 24px 32px rgba(62, 67, 73, 0.3)'
-}
-
-export const transition = 'all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86) 0s'
+import { shadowLight } from './shadows'
 
 // inputs
 
