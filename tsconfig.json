@@ -15,6 +15,6 @@
     "emitDecoratorMetadata": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*", "stories/CountrySelect.stories.tsx"],
-  "exclude": ["node_modules", "build", "scripts"]
+  "include": ["src/**/*", "stories/**/*"],
+  "exclude": ["node_modules", "build", "**/*.test.tsx", "**/*.test.ts", "**/*.stories.tsx"]
 }
