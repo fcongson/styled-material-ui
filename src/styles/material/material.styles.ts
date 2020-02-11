@@ -1,5 +1,5 @@
 import { withStyles } from '@material-ui/core'
-import { checkbox, icon, input, select, tag } from './global.styles'
+import { checkbox, icon, input, select, tag } from '../global.styles'
 
 const muiAutoComplete = {
   '.MuiAutocomplete-inputRoot[class*="MuiInput-root"]': {
