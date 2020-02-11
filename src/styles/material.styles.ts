@@ -42,6 +42,7 @@ export const MaterialStyles = withStyles({
         }
       },
       '&.multiple': {
+        padding: 0,
         ...select.options.item.multiple,
         '& .MuiCheckbox-root': {
           padding: '4px 8px 4px 16px'

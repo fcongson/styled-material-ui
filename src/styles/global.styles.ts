@@ -67,7 +67,6 @@ export const select = {
         color: palette['white-base']
       },
       multiple: {
-        padding: 0,
         backgroundColor: 'transparent',
         color: palette['black-base']
       }
