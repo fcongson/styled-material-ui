@@ -4,8 +4,8 @@ import Close from '@material-ui/icons/Close'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import * as React from 'react'
-import { Checked, RemoveTag, Unchecked } from '../../icons/Icons'
-import { MaterialStyles } from '../../styles/material/material.styles'
+import { Checked, RemoveTag, Unchecked } from '../../icons'
+import { MaterialStyles } from '../../styles/material'
 import { countries } from './countries'
 
 const countryOptions: { label: string; value: string }[] = countries.map(country => ({
