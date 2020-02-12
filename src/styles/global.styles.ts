@@ -10,7 +10,7 @@ export const input_text = {
   fontSize: '14px',
   fontWeight: 500
 }
-export const input_underline_default = { borderBottom: `1px solid ${palette['grey-base']}` }
+export const input_underline_default = { borderBottom: `1px solid ${palette['stone-lighter-40']}` }
 export const input_underline_focused = { borderBottom: `1px solid ${palette['black-base']}` }
 export const input_underline_transition = { transition: 'none' }
 export const input_height = { minHeight: 28 }
@@ -25,7 +25,7 @@ export const input = {
   underline: {
     default: {
       transition: 'none',
-      borderBottom: `1px solid ${palette['grey-base']}`
+      borderBottom: `1px solid ${palette['stone-lighter-40']}`
     },
     focused: {
       transition: 'none',
@@ -59,11 +59,11 @@ export const select = {
         color: palette['black-base']
       },
       focused: {
-        backgroundColor: palette['turquiose'],
+        backgroundColor: palette['turquoise'],
         color: palette['white-base']
       },
       selected: {
-        backgroundColor: palette['turquiose'],
+        backgroundColor: palette['turquoise'],
         color: palette['white-base']
       },
       multiple: {
@@ -97,11 +97,11 @@ export const checkbox = {
     backgroundColor: palette['grey-base']
   },
   checked: {
-    border: `2px solid ${palette['turquiose']}`,
-    backgroundColor: palette['turquiose']
+    border: `2px solid ${palette['turquoise']}`,
+    backgroundColor: palette['turquoise']
   },
   focused: {
-    border: `2px solid ${palette['turquiose']}`
+    border: `2px solid ${palette['turquoise']}`
   }
 }
 
