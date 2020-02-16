@@ -1,7 +1,7 @@
 {
   "name": "styled-material-ui",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/lib/index.js",
   "author": "Frank Congson <fcongson@gmail.com>",
   "license": "MIT",
   "dependencies": {

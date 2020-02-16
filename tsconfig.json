@@ -7,13 +7,15 @@
     "sourceMap": true,
     "allowJs": false,
     "jsx": "react",
+    "declaration": true,
     "moduleResolution": "node",
     "rootDirs": ["src", "stories"],
     "baseUrl": "src",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "typeRoots": ["./node_modules/@types/"]
   },
   "include": ["src/**/*", "stories/**/*"],
   "exclude": ["node_modules", "build", "**/*.test.tsx", "**/*.test.ts", "**/*.stories.tsx"]
