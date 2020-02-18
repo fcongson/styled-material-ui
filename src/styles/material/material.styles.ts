@@ -65,6 +65,9 @@ const muiIcon = {
   '.MuiIconButton-root': {
     '&:hover': icon.button,
     '& svg': icon.svg
+  },
+  '.MuiInputLabel-root': {
+    ...input.text
   }
 }
 

@@ -24,24 +24,28 @@ const countryOption = (country?: string) => {
 type CountryValue = string | string[]
 
 interface CountrySelectProps<T extends CountryValue> {
+  label?: string
   value?: T
   onChange?: (value: T) => void | undefined
   multiple?: boolean
 }
 
 interface CountrySelectSingleProps {
+  label?: string
   value?: string
   onChange?: (value: string) => void | undefined
   multiple?: false
 }
 
 interface CountrySelectMultipleProps {
+  label?: string
   value?: string[]
   onChange?: (value: string[]) => void | undefined
   multiple: true
 }
 
 export const CountrySelect: <T extends CountryValue>(props: CountrySelectProps<T>) => JSX.Element = ({
+  label,
   value,
   onChange,
   multiple
@@ -50,17 +54,22 @@ export const CountrySelect: <T extends CountryValue>(props: CountrySelectProps<T
     <MaterialStyles />
     {multiple ? (
       <CountrySelectMultiple
+        label={label}
         value={value as string[]}
         onChange={onChange as (value: string[]) => void | undefined}
         multiple
       />
     ) : (
-      <CountrySelectSingle value={value as string} onChange={onChange as (value: string) => void | undefined} />
+      <CountrySelectSingle
+        label={label}
+        value={value as string}
+        onChange={onChange as (value: string) => void | undefined}
+      />
     )}
   </>
 )
 
-export const CountrySelectSingle: React.FC<CountrySelectSingleProps> = ({ value, onChange }) => (
+export const CountrySelectSingle: React.FC<CountrySelectSingleProps> = ({ label, value, onChange }) => (
   <Autocomplete
     value={countryOption(value)}
     autoHighlight
@@ -70,13 +79,13 @@ export const CountrySelectSingle: React.FC<CountrySelectSingleProps> = ({ value,
     options={countryOptions}
     getOptionLabel={option => option.label}
     getOptionSelected={(option, value) => option.value === value.value}
-    renderInput={params => <TextField {...params} fullWidth />}
+    renderInput={params => <TextField label={label} {...params} fullWidth />}
     popupIcon={<ExpandMore />}
     closeIcon={<Close />}
   />
 )
 
-export const CountrySelectMultiple: React.FC<CountrySelectMultipleProps> = ({ value, onChange }) => (
+export const CountrySelectMultiple: React.FC<CountrySelectMultipleProps> = ({ label, value, onChange }) => (
   <Autocomplete
     multiple
     disableCloseOnSelect
@@ -93,7 +102,7 @@ export const CountrySelectMultiple: React.FC<CountrySelectMultipleProps> = ({ va
         {option.label}
       </>
     )}
-    renderInput={params => <TextField {...params} fullWidth />}
+    renderInput={params => <TextField label={label} {...params} fullWidth />}
     popupIcon={<ExpandMore />}
     closeIcon={<Close />}
     ChipProps={{
