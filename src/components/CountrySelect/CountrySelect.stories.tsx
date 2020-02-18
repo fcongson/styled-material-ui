@@ -17,11 +17,11 @@ export const SingleWithLabel = () => {
 }
 
 export const Multiple = () => {
-  const [values, setValues] = useState([])
+  const [values, setValues] = useState(['ATA', 'GRL'])
   return <CountrySelect label={'Countries'} value={values} onChange={values => setValues(values)} multiple />
 }
 
 export const MultipleWithLabel = () => {
-  const [values, setValues] = useState(['ATA'])
-  return <CountrySelect value={values} onChange={values => setValues(values)} multiple />
+  const [values, setValues] = useState([])
+  return <CountrySelect label={'Countries'} value={values} onChange={values => setValues(values)} multiple />
 }
