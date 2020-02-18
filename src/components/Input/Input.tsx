@@ -12,6 +12,12 @@ interface InputProps {
 export const Input: React.FC<InputProps> = ({ label, value, placeholder, onChange }) => (
   <>
     <MaterialStyles />
-    <TextField label={label} value={value} placeholder={placeholder} onChange={event => onChange(event.target.value)} />
+    <TextField
+      label={label}
+      value={value}
+      placeholder={placeholder}
+      onChange={event => onChange(event.target.value)}
+      fullWidth
+    />
   </>
 )
