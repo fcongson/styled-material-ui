@@ -17,6 +17,9 @@ export const input_height = { minHeight: 28 }
 export const input_spacing = { padding: 0 }
 
 export const input = {
+  label: {
+    color: palette['stone-base']
+  },
   text: {
     fontFamily: 'Montserrat',
     fontSize: '14px',

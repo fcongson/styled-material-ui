@@ -58,6 +58,20 @@ const muiInput = {
   '.MuiInput-underline': {
     '&:not(.Mui-disabled):before, &:hover:not(.Mui-disabled):before': input.underline.default,
     '&:after': input.underline.focused
+  },
+  '.MuiInputLabel-root': {
+    ...input.text
+  },
+  '.MuiInput-input': {
+    ...input.text
+  }
+}
+
+const muiForm = {
+  '.MuiFormLabel-root': {
+    '&.Mui-focused': {
+      ...input.label
+    }
   }
 }
 
@@ -65,9 +79,6 @@ const muiIcon = {
   '.MuiIconButton-root': {
     '&:hover': icon.button,
     '& svg': icon.svg
-  },
-  '.MuiInputLabel-root': {
-    ...input.text
   }
 }
 
@@ -88,6 +99,7 @@ export const MaterialStyles = withStyles({
   '@global': {
     ...muiAutoComplete,
     ...muiInput,
+    ...muiForm,
     ...muiIcon,
     ...muiTouchRipple,
     ...muiChip
