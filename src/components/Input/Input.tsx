@@ -20,7 +20,7 @@ export const Input: React.FC<InputProps> = ({ name, label, value, placeholder, o
       value={value}
       placeholder={placeholder}
       onChange={event => {
-        if (!!onchange) onChange(event.target.value)
+        if (!!onChange) onChange(event.target.value)
       }}
       onBlur={event => {
         if (!!onBlur) onBlur(event.target.value)
