@@ -6,18 +6,29 @@ interface InputProps {
   name?: string
   label?: string
   value?: string
+  defaultValue?: string
   placeholder?: string
   onChange?: (value: string) => void | undefined
   onBlur?: (value: string) => void | undefined
 }
 
-export const Input: React.FC<InputProps> = ({ name, label, value, placeholder, onChange, onBlur, ...restProps }) => (
+export const Input: React.FC<InputProps> = ({
+  name,
+  label,
+  value,
+  defaultValue,
+  placeholder,
+  onChange,
+  onBlur,
+  ...restProps
+}) => (
   <>
     <MaterialStyles />
     <TextField
       name={name}
       label={label}
       value={value}
+      defaultValue={defaultValue}
       placeholder={placeholder}
       onChange={event => {
         if (!!onChange) onChange(event.target.value)

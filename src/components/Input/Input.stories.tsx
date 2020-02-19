@@ -20,3 +20,5 @@ export const TextInputWithPlaceholder = () => {
   const [value, setValue] = useState()
   return <Input placeholder={'Placeholder'} value={value} onChange={value => setValue(value)} />
 }
+
+export const TextInputWithUncontrolledValue = () => <Input defaultValue={'Lorem ipsum'} />
