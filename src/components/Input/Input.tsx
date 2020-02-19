@@ -19,8 +19,12 @@ export const Input: React.FC<InputProps> = ({ name, label, value, placeholder, o
       label={label}
       value={value}
       placeholder={placeholder}
-      onChange={event => onChange(event.target.value)}
-      onBlur={event => onBlur(event.target.value)}
+      onChange={event => {
+        if (!!onchange) onChange(event.target.value)
+      }}
+      onBlur={event => {
+        if (!!onBlur) onBlur(event.target.value)
+      }}
       fullWidth
       {...restProps}
     />
