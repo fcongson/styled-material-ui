@@ -96,8 +96,8 @@ export const SelectSingle: React.FC<SelectSingleProps> = ({
       if (!!onChange) onChange(value?.value ?? '')
     }}
     options={options}
-    getOptionLabel={option => option.label}
-    getOptionSelected={(option, value) => option.value === value.value}
+    getOptionLabel={option => option?.label}
+    getOptionSelected={(option, value) => option?.value === value?.value}
     renderInput={params => <TextField label={label} placeholder={placeholder} {...params} fullWidth />}
     popupIcon={<ExpandMore />}
     closeIcon={<Close />}
@@ -121,12 +121,12 @@ export const SelectMultiple: React.FC<SelectMultipleProps> = ({
       if (!!onChange) onChange(value.map(({ value }: { value: string }) => value))
     }}
     options={options}
-    getOptionLabel={option => option.label}
-    getOptionSelected={(option, value) => option.value === value.value}
+    getOptionLabel={option => option?.label}
+    getOptionSelected={(option, value) => option?.value === value?.value}
     renderOption={(option, { selected }) => (
       <>
         <Checkbox icon={Unchecked} checkedIcon={Checked} style={{}} checked={selected} />
-        {option.label}
+        {option?.label}
       </>
     )}
     renderInput={params => <TextField label={label} placeholder={placeholder} {...params} fullWidth />}
