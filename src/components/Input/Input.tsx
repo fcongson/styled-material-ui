@@ -9,7 +9,7 @@ interface InputProps {
   onChange?: (value: string) => void | undefined
 }
 
-export const Input: React.FC<InputProps> = ({ label, value, placeholder, onChange }) => (
+export const Input: React.FC<InputProps> = ({ label, value, placeholder, onChange, ...restProps }) => (
   <>
     <MaterialStyles />
     <TextField
@@ -18,6 +18,7 @@ export const Input: React.FC<InputProps> = ({ label, value, placeholder, onChang
       placeholder={placeholder}
       onChange={event => onChange(event.target.value)}
       fullWidth
+      {...restProps}
     />
   </>
 )

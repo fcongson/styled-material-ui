@@ -53,7 +53,8 @@ export const Select: <T extends SelectValue, U extends SelectOption>(props: Sele
   value,
   options,
   onChange,
-  multiple
+  multiple,
+  ...restProps
 }) => (
   <>
     <MaterialStyles />
@@ -65,6 +66,7 @@ export const Select: <T extends SelectValue, U extends SelectOption>(props: Sele
         options={options}
         onChange={onChange as (value: string[]) => void | undefined}
         multiple
+        {...restProps}
       />
     ) : (
       <SelectSingle
@@ -73,12 +75,20 @@ export const Select: <T extends SelectValue, U extends SelectOption>(props: Sele
         value={value as string}
         options={options}
         onChange={onChange as (value: string) => void | undefined}
+        {...restProps}
       />
     )}
   </>
 )
 
-export const SelectSingle: React.FC<SelectSingleProps> = ({ label, placeholder, value, options, onChange }) => (
+export const SelectSingle: React.FC<SelectSingleProps> = ({
+  label,
+  placeholder,
+  value,
+  options,
+  onChange,
+  ...restProps
+}) => (
   <Autocomplete
     value={options.find(option => option.value === value)}
     autoHighlight
@@ -91,10 +101,18 @@ export const SelectSingle: React.FC<SelectSingleProps> = ({ label, placeholder, 
     renderInput={params => <TextField label={label} placeholder={placeholder} {...params} fullWidth />}
     popupIcon={<ExpandMore />}
     closeIcon={<Close />}
+    {...restProps}
   />
 )
 
-export const SelectMultiple: React.FC<SelectMultipleProps> = ({ label, placeholder, value, options, onChange }) => (
+export const SelectMultiple: React.FC<SelectMultipleProps> = ({
+  label,
+  placeholder,
+  value,
+  options,
+  onChange,
+  ...restProps
+}) => (
   <Autocomplete
     multiple
     disableCloseOnSelect
@@ -118,5 +136,6 @@ export const SelectMultiple: React.FC<SelectMultipleProps> = ({ label, placehold
       deleteIcon: RemoveTag
     }}
     classes={{ option: 'multiple', inputRoot: 'multiple' }}
+    {...restProps}
   />
 )

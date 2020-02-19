@@ -48,7 +48,8 @@ export const CountrySelect: <T extends CountryValue>(props: CountrySelectProps<T
   label,
   value,
   onChange,
-  multiple
+  multiple,
+  ...restProps
 }) => (
   <>
     <MaterialStyles />
@@ -58,18 +59,20 @@ export const CountrySelect: <T extends CountryValue>(props: CountrySelectProps<T
         value={value as string[]}
         onChange={onChange as (value: string[]) => void | undefined}
         multiple
+        {...restProps}
       />
     ) : (
       <CountrySelectSingle
         label={label}
         value={value as string}
         onChange={onChange as (value: string) => void | undefined}
+        {...restProps}
       />
     )}
   </>
 )
 
-export const CountrySelectSingle: React.FC<CountrySelectSingleProps> = ({ label, value, onChange }) => (
+export const CountrySelectSingle: React.FC<CountrySelectSingleProps> = ({ label, value, onChange, ...restProps }) => (
   <Autocomplete
     value={countryOption(value)}
     autoHighlight
@@ -82,10 +85,16 @@ export const CountrySelectSingle: React.FC<CountrySelectSingleProps> = ({ label,
     renderInput={params => <TextField label={label} {...params} fullWidth />}
     popupIcon={<ExpandMore />}
     closeIcon={<Close />}
+    {...restProps}
   />
 )
 
-export const CountrySelectMultiple: React.FC<CountrySelectMultipleProps> = ({ label, value, onChange }) => (
+export const CountrySelectMultiple: React.FC<CountrySelectMultipleProps> = ({
+  label,
+  value,
+  onChange,
+  ...restProps
+}) => (
   <Autocomplete
     multiple
     disableCloseOnSelect
@@ -109,5 +118,6 @@ export const CountrySelectMultiple: React.FC<CountrySelectMultipleProps> = ({ la
       deleteIcon: RemoveTag
     }}
     classes={{ option: 'multiple', inputRoot: 'multiple' }}
+    {...restProps}
   />
 )
