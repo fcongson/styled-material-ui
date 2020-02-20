@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
-import React, { useEffect, useState } from 'react'
+import * as React from 'react'
+import { useEffect, useState } from 'react'
 import { palette, spacing, transition } from '../../styles'
 import { toggle as toggleStyle } from '../../styles/global.styles'
 
