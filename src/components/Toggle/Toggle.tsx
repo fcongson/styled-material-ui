@@ -43,42 +43,25 @@ const LabelContainer = styled.div({
 })
 
 const ToggleContainer = styled.div((props: { label?: string }) => ({
-  width: `${spacing.xxl}px`,
-  height: `${spacing.lg}px`,
+  ...toggleStyle.container,
   position: 'relative',
-  marginLeft: !!props.label && `${spacing.md}px`,
-  '&:hover': {
-    cursor: 'pointer'
-  }
+  marginLeft: !!props.label && `${spacing.md}px`
 }))
 
 const ToggleTrack = styled.div((props: { toggle: boolean }) => ({
   ...toggleStyle.text.track,
-  width: `${spacing.xxl}px`,
-  height: `${spacing.lg}px`,
-  borderRadius: `${spacing.md}px`,
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignitems: 'center',
-  boxSizing: 'border-box',
-  padding: '0px 8px 0px 8px',
+  ...toggleStyle.track,
   background: props.toggle ? palette['turquoise'] : palette['grey-base'],
   transition: transition
 }))
 
 const ToggleTrackText = styled.span((props: { yes?: boolean }) => ({
-  display: 'flex',
-  alignItems: 'center',
+  ...toggleStyle.text.track,
   color: props.yes && palette['white-base']
 }))
 
 const ToggleSelector = styled.div((props: { toggle: boolean }) => ({
-  width: '24px',
-  height: '24px',
-  borderRadius: '12px',
-  position: 'absolute',
-  margin: '4px',
-  top: '0px',
+  ...toggleStyle.selector,
   background: props.toggle ? palette['white-base'] : palette['stone-base'],
   left: props.toggle ? '32px' : '0px',
   transition: transition
