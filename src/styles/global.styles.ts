@@ -148,6 +148,12 @@ export const tag = {
 // toggles
 
 export const toggle = {
+  label: {
+    container: {
+      display: 'flex',
+      alignItems: 'center'
+    }
+  },
   container: {
     display: 'flex',
     alignItems: 'center',

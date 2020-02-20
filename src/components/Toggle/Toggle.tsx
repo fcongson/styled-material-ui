@@ -38,7 +38,7 @@ export const Toggle: React.FC<ToggleProps> = ({ label, value, onChange, ...restP
 }
 
 const LabelContainer = styled.div({
-  ...toggleStyle.container,
+  ...toggleStyle.label.container,
   ...toggleStyle.text.label
 })
 
