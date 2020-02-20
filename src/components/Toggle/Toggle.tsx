@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import React, { useEffect, useState } from 'react'
 import { palette, spacing, transition } from '../../styles'
 import { toggle as toggleStyle } from '../../styles/global.styles'
@@ -18,49 +17,41 @@ export const Toggle: React.FC<ToggleProps> = ({ label, value, onChange, ...restP
   }, [value])
 
   return (
-    <div css={{ ...toggleStyle.container, ...toggleStyle.text.label }} {...restProps}>
+    <LabelContainer {...restProps}>
       {label}
-      <div
-        css={style}
+      <ToggleContainer
         onClick={() => {
           const value = !toggle
-          onChange(value)
+          if (!!onChange) onChange(value)
           setToggle(value)
         }}>
-        <div css={[css(toggleStyle.text.track), options, toggle ? optionsYes : optionsNo]}>
-          <span
-            css={{
-              display: 'flex',
-              alignItems: 'center',
-              color: palette['white-base']
-            }}>
-            Yes
-          </span>
-          <span
-            css={{
-              display: 'flex',
-              alignItems: 'center'
-            }}>
-            No
-          </span>
-        </div>
-        <div css={[selected, toggle ? selectedYes : selectedNo]}></div>
-      </div>
-    </div>
+        <ToggleTrack toggle={toggle}>
+          <ToggleTrackText yes>Yes</ToggleTrackText>
+          <ToggleTrackText>No</ToggleTrackText>
+        </ToggleTrack>
+        <ToggleSelector toggle={toggle} />
+      </ToggleContainer>
+    </LabelContainer>
   )
 }
 
-const style = css({
+const LabelContainer = styled.div({
+  ...toggleStyle.container,
+  ...toggleStyle.text.label
+})
+
+const ToggleContainer = styled.div({
   width: `${spacing.xxl}px`,
   height: `${spacing.lg}px`,
-  position: `relative`,
+  position: 'relative',
   marginLeft: `${spacing.md}px`,
   '&:hover': {
     cursor: 'pointer'
   }
 })
 
-const options = css({
+const ToggleTrack = styled.div((props: { toggle: boolean }) => ({
+  ...toggleStyle.text.track,
   width: `${spacing.xxl}px`,
   height: `${spacing.lg}px`,
   borderRadius: `${spacing.md}px`,
@@ -68,36 +59,25 @@ const options = css({
   justifyContent: 'space-between',
   alignitems: 'center',
   boxSizing: 'border-box',
-  padding: '0px 8px 0px 8px'
-})
-
-const optionsYes = css({
-  background: palette['turquoise'],
+  padding: '0px 8px 0px 8px',
+  background: props.toggle ? palette['turquoise'] : palette['grey-base'],
   transition: transition
-})
+}))
 
-const optionsNo = css({
-  background: palette['grey-base'],
-  transition: transition
-})
+const ToggleTrackText = styled.span((props: { yes?: boolean }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  color: props.yes && palette['white-base']
+}))
 
-const selected = css({
+const ToggleSelector = styled.div((props: { toggle: boolean }) => ({
   width: '24px',
   height: '24px',
   borderRadius: '12px',
   position: 'absolute',
   margin: '4px',
-  top: '0px'
-})
-
-const selectedYes = css({
-  background: palette['white-base'],
-  left: '32px',
+  top: '0px',
+  background: props.toggle ? palette['white-base'] : palette['stone-base'],
+  left: props.toggle ? '32px' : '0px',
   transition: transition
-})
-
-const selectedNo = css({
-  background: palette['stone-base'],
-  left: '0px',
-  transition: transition
-})
+}))
