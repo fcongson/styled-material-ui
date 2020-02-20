@@ -21,6 +21,7 @@ export const Toggle: React.FC<ToggleProps> = ({ label, value, onChange, ...restP
     <LabelContainer {...restProps}>
       {label}
       <ToggleContainer
+        label={label}
         onClick={() => {
           const value = !toggle
           if (!!onChange) onChange(value)
@@ -41,15 +42,15 @@ const LabelContainer = styled.div({
   ...toggleStyle.text.label
 })
 
-const ToggleContainer = styled.div({
+const ToggleContainer = styled.div((props: { label?: string }) => ({
   width: `${spacing.xxl}px`,
   height: `${spacing.lg}px`,
   position: 'relative',
-  marginLeft: `${spacing.md}px`,
+  marginLeft: !!props.label && `${spacing.md}px`,
   '&:hover': {
     cursor: 'pointer'
   }
-})
+}))
 
 const ToggleTrack = styled.div((props: { toggle: boolean }) => ({
   ...toggleStyle.text.track,
