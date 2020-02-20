@@ -2,6 +2,7 @@ import { transition } from './animations'
 import { palette } from './colors'
 import './fonts'
 import { shadowLight } from './shadows'
+import { spacing } from './spacing'
 
 // inputs
 
@@ -83,15 +84,7 @@ export const checkbox = {
   default: {
     height: 32,
     width: 32,
-    boxSizing: 'border-box' as
-      | '-moz-initial'
-      | 'inherit'
-      | 'initial'
-      | 'revert'
-      | 'unset'
-      | 'border-box'
-      | 'content-box'
-      | undefined,
+    boxSizing: 'border-box' as 'border-box',
     borderRadius: 4,
     transition: transition
   },
@@ -149,5 +142,55 @@ export const tag = {
     width: '12px',
     height: '12px',
     margin: '0 4px 0 4px'
+  }
+}
+
+// toggles
+
+export const toggle = {
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+    width: `${spacing.xxl}px`,
+    height: `${spacing.lg}px`,
+    '&:hover': {
+      cursor: 'pointer'
+    }
+  },
+  track: {
+    width: `${spacing.xxl}px`,
+    height: `${spacing.lg}px`,
+    borderRadius: `${spacing.md}px`,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignitems: 'center',
+    boxSizing: 'border-box' as 'border-box',
+    padding: '0px 8px 0px 8px'
+  },
+  selector: {
+    width: '24px',
+    height: '24px',
+    borderRadius: '12px',
+    position: 'absolute' as 'absolute',
+    margin: '4px',
+    top: '0px'
+  },
+  text: {
+    label: {
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: 500,
+      fontSize: '16px',
+      lineHeight: '24px'
+    },
+    track: {
+      display: 'flex',
+      alignItems: 'center',
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: 500,
+      fontSize: '12px',
+      lineHeight: '18px'
+    }
   }
 }
