@@ -151,3 +151,28 @@ export const tag = {
     margin: '0 4px 0 4px'
   }
 }
+
+// toggles
+
+export const toggle = {
+  container: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+  text: {
+    label: {
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: 500,
+      fontSize: '16px',
+      lineHeight: '24px'
+    },
+    track: {
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: 500,
+      fontSize: '12px',
+      lineHeight: '18px'
+    }
+  }
+}
