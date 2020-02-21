@@ -95,6 +95,30 @@ const muiChip = {
   '.MuiChip-deleteIcon': tag.delete
 }
 
+const muiCheckbox = {
+  '.MuiCheckbox-root': {
+    '& span.unchecked': {
+      ...checkbox.default,
+      ...checkbox.unchecked
+    },
+    '& span.checked': {
+      ...checkbox.default,
+      ...checkbox.checked
+    },
+    '&:hover': {
+      '& span.unchecked': {
+        ...checkbox.focused
+      }
+    },
+    '& .MuiTouchRipple-root': {
+      '& .MuiTouchRipple-rippleVisible': icon.animation
+    }
+  },
+  '.MuiCheckbox-colorSecondary.Mui-checked:hover': {
+    backgroundColor: 'transparent'
+  }
+}
+
 export const MaterialStyles = withStyles({
   '@global': {
     ...muiAutoComplete,
@@ -102,6 +126,7 @@ export const MaterialStyles = withStyles({
     ...muiForm,
     ...muiIcon,
     ...muiTouchRipple,
-    ...muiChip
+    ...muiChip,
+    ...muiCheckbox
   }
 })(() => null)

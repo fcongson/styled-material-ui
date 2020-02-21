@@ -107,7 +107,7 @@ export const CountrySelectMultiple: React.FC<CountrySelectMultipleProps> = ({
     getOptionSelected={(option, value) => option.value === value.value}
     renderOption={(option, { selected }) => (
       <>
-        <Checkbox icon={Unchecked} checkedIcon={Checked} style={{}} checked={selected} />
+        <Checkbox icon={Unchecked} checkedIcon={Checked} checked={selected} />
         {option.label}
       </>
     )}

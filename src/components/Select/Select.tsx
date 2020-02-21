@@ -125,7 +125,7 @@ export const SelectMultiple: React.FC<SelectMultipleProps> = ({
     getOptionSelected={(option, value) => option?.value === value?.value}
     renderOption={(option, { selected }) => (
       <>
-        <Checkbox icon={Unchecked} checkedIcon={Checked} style={{}} checked={selected} />
+        <Checkbox icon={Unchecked} checkedIcon={Checked} checked={selected} />
         {option?.label}
       </>
     )}
