@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useState } from 'react'
-import { MaterialStyles } from '../../styles/material'
 import { Checkbox } from './Checkbox'
 
 export default {
@@ -10,10 +9,10 @@ export default {
 
 export const Default = () => {
   const [checked, setChecked] = useState(false)
-  return (
-    <>
-      <MaterialStyles />
-      <Checkbox checked={checked} onChange={checked => setChecked(checked)} />
-    </>
-  )
+  return <Checkbox checked={checked} onChange={checked => setChecked(checked)} />
+}
+
+export const CheckboxWithLabel = () => {
+  const [checked, setChecked] = useState(false)
+  return <Checkbox label='Lorem ipsum dolor sit amet' checked={checked} onChange={checked => setChecked(checked)} />
 }
