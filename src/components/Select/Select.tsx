@@ -101,6 +101,7 @@ export const SelectSingle: React.FC<SelectSingleProps> = ({
     renderInput={params => <TextField label={label} placeholder={placeholder} {...params} fullWidth />}
     popupIcon={<ExpandMore />}
     closeIcon={<Close />}
+    classes={{ input: 'styled', option: 'styled' }}
     {...restProps}
   />
 )
@@ -135,7 +136,7 @@ export const SelectMultiple: React.FC<SelectMultipleProps> = ({
     ChipProps={{
       deleteIcon: RemoveTag
     }}
-    classes={{ option: 'multiple', inputRoot: 'multiple' }}
+    classes={{ input: 'styled', option: 'multiple', inputRoot: 'multiple' }}
     {...restProps}
   />
 )
