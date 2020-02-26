@@ -24,7 +24,8 @@ export const input = {
   text: {
     fontFamily: 'Montserrat',
     fontSize: '14px',
-    fontWeight: 500
+    fontWeight: 500,
+    color: palette['black-base']
   },
   underline: {
     default: {

@@ -39,5 +39,6 @@ const Label = styled.span({
   fontWeight: 500,
   fontSize: '16px',
   lineHeight: '20px',
-  color: palette['black-base']
+  color: palette['black-base'],
+  paddingLeft: '8px'
 })

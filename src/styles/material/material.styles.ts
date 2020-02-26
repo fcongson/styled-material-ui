@@ -6,11 +6,10 @@ const muiAutoComplete = {
     ...input.size,
     ...input.spacing,
     ...input.text,
-    '& .MuiAutocomplete-input:first-child': {
+    '& .MuiAutocomplete-input.styled:first-child': {
       ...input.size,
       ...input.spacing,
-      ...input.text,
-      paddingRight: 60
+      ...input.text
     },
     '&.multiple': {
       paddingRight: 64
@@ -27,7 +26,7 @@ const muiAutoComplete = {
       ...checkbox.default,
       ...checkbox.checked
     },
-    '&[data-focus="true"], &[aria-selected="true"]': {
+    '&.styled[data-focus="true"], &.styled[aria-selected="true"]': {
       ...select.options.item.selected,
       '& span.unchecked': {
         ...checkbox.focused
@@ -36,7 +35,7 @@ const muiAutoComplete = {
         ...checkbox.focused
       }
     },
-    '&.multiple': {
+    '&.multiple, &.multiple[data-focus="true"], &.multiple[aria-selected="true"]': {
       padding: 0,
       ...select.options.item.multiple,
       '& .MuiCheckbox-root': {
@@ -64,6 +63,11 @@ const muiInput = {
   },
   '.MuiInput-input': {
     ...input.text
+  },
+  '.MuiInputAdornment-root': {
+    '& .MuiTypography-root': {
+      ...input.text
+    }
   }
 }
 
@@ -97,6 +101,7 @@ const muiChip = {
 
 const muiCheckbox = {
   '.MuiCheckbox-root': {
+    padding: 0,
     '& span.unchecked': {
       ...checkbox.default,
       ...checkbox.unchecked

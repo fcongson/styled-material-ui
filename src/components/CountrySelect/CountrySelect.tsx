@@ -85,6 +85,7 @@ export const CountrySelectSingle: React.FC<CountrySelectSingleProps> = ({ label,
     renderInput={params => <TextField label={label} {...params} fullWidth />}
     popupIcon={<ExpandMore />}
     closeIcon={<Close />}
+    classes={{ input: 'styled', option: 'styled' }}
     {...restProps}
   />
 )
@@ -117,7 +118,7 @@ export const CountrySelectMultiple: React.FC<CountrySelectMultipleProps> = ({
     ChipProps={{
       deleteIcon: RemoveTag
     }}
-    classes={{ option: 'multiple', inputRoot: 'multiple' }}
+    classes={{ input: 'styled', option: 'multiple', inputRoot: 'multiple' }}
     {...restProps}
   />
 )
