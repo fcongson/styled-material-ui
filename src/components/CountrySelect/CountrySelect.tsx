@@ -1,11 +1,11 @@
-import { Checkbox } from '@material-ui/core'
+import { Checkbox, ThemeProvider } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
 import Close from '@material-ui/icons/Close'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import * as React from 'react'
 import { Checked, RemoveTag, Unchecked } from '../../icons'
-import { MaterialStyles } from '../../styles/material'
+import { theme } from '../../styles/material'
 import { countries } from './countries'
 
 const countryOptions: { label: string; value: string }[] = countries.map(country => ({
@@ -51,8 +51,7 @@ export const CountrySelect: <T extends CountryValue>(props: CountrySelectProps<T
   multiple,
   ...restProps
 }) => (
-  <>
-    <MaterialStyles />
+  <ThemeProvider theme={theme}>
     {multiple ? (
       <CountrySelectMultiple
         label={label}
@@ -69,7 +68,7 @@ export const CountrySelect: <T extends CountryValue>(props: CountrySelectProps<T
         {...restProps}
       />
     )}
-  </>
+  </ThemeProvider>
 )
 
 export const CountrySelectSingle: React.FC<CountrySelectSingleProps> = ({ label, value, onChange, ...restProps }) => (
@@ -85,7 +84,6 @@ export const CountrySelectSingle: React.FC<CountrySelectSingleProps> = ({ label,
     renderInput={params => <TextField label={label} {...params} fullWidth />}
     popupIcon={<ExpandMore />}
     closeIcon={<Close />}
-    classes={{ input: 'styled', option: 'styled' }}
     {...restProps}
   />
 )
@@ -118,7 +116,7 @@ export const CountrySelectMultiple: React.FC<CountrySelectMultipleProps> = ({
     ChipProps={{
       deleteIcon: RemoveTag
     }}
-    classes={{ input: 'styled', option: 'multiple', inputRoot: 'multiple' }}
+    classes={{ option: 'multiple', inputRoot: 'multiple' }}
     {...restProps}
   />
 )

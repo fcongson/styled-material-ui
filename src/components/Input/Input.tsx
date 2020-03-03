@@ -1,6 +1,7 @@
+import { ThemeProvider } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
 import * as React from 'react'
-import { MaterialStyles } from '../../styles/material'
+import { theme } from '../../styles/material'
 
 interface InputProps {
   name?: string
@@ -22,8 +23,7 @@ export const Input: React.FC<InputProps> = ({
   onBlur,
   ...restProps
 }) => (
-  <>
-    <MaterialStyles />
+  <ThemeProvider theme={theme}>
     <TextField
       name={name}
       label={label}
@@ -39,5 +39,5 @@ export const Input: React.FC<InputProps> = ({
       fullWidth
       {...restProps}
     />
-  </>
+  </ThemeProvider>
 )

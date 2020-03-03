@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
-import { Checkbox as MaterialCheckbox } from '@material-ui/core'
+import { Checkbox as MaterialCheckbox, ThemeProvider } from '@material-ui/core'
 import * as React from 'react'
 import { Checked, Unchecked } from '../../icons'
 import { palette } from '../../styles'
-import { MaterialStyles } from '../../styles/material'
+import { theme } from '../../styles/material'
 
 interface CheckboxProps {
   label?: string
@@ -12,8 +12,7 @@ interface CheckboxProps {
 }
 
 export const Checkbox: React.FC<CheckboxProps> = ({ label, checked, onChange }) => (
-  <>
-    <MaterialStyles />
+  <ThemeProvider theme={theme}>
     <LabelContainer>
       <MaterialCheckbox
         icon={Unchecked}
@@ -25,7 +24,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ label, checked, onChange }) 
       />
       {!!label && <Label>{label}</Label>}
     </LabelContainer>
-  </>
+  </ThemeProvider>
 )
 
 const LabelContainer = styled.div({
