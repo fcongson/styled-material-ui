@@ -1,1 +1,1 @@
-export * from './material.styles'
+export * from './material.theme'

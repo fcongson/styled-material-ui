@@ -1,11 +1,11 @@
-import { Checkbox } from '@material-ui/core'
+import { Checkbox, ThemeProvider } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
 import Close from '@material-ui/icons/Close'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import * as React from 'react'
 import { Checked, RemoveTag, Unchecked } from '../../icons'
-import { MaterialStyles } from '../../styles/material'
+import { theme } from '../../styles/material'
 
 type SelectValue = string | string[]
 
@@ -56,8 +56,7 @@ export const Select: <T extends SelectValue, U extends SelectOption>(props: Sele
   multiple,
   ...restProps
 }) => (
-  <>
-    <MaterialStyles />
+  <ThemeProvider theme={theme}>
     {multiple ? (
       <SelectMultiple
         label={label}
@@ -78,7 +77,7 @@ export const Select: <T extends SelectValue, U extends SelectOption>(props: Sele
         {...restProps}
       />
     )}
-  </>
+  </ThemeProvider>
 )
 
 export const SelectSingle: React.FC<SelectSingleProps> = ({
@@ -101,7 +100,6 @@ export const SelectSingle: React.FC<SelectSingleProps> = ({
     renderInput={params => <TextField label={label} placeholder={placeholder} {...params} fullWidth />}
     popupIcon={<ExpandMore />}
     closeIcon={<Close />}
-    classes={{ input: 'styled', option: 'styled' }}
     {...restProps}
   />
 )
@@ -136,7 +134,7 @@ export const SelectMultiple: React.FC<SelectMultipleProps> = ({
     ChipProps={{
       deleteIcon: RemoveTag
     }}
-    classes={{ input: 'styled', option: 'multiple', inputRoot: 'multiple' }}
+    classes={{ option: 'multiple', inputRoot: 'multiple' }}
     {...restProps}
   />
 )
