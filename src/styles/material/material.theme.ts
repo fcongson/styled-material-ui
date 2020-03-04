@@ -1,4 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles'
+import { paragraph } from '../../styles'
 import { checkbox, icon, input, select, tag } from '../global.styles'
 
 const muiPaper = {
@@ -20,12 +21,20 @@ const muiPaper = {
 }
 
 export const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Montserrat'
+  },
   props: {
     MuiButtonBase: {
       disableRipple: true
     }
   },
   overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        '@font-face': [paragraph]
+      }
+    },
     MuiIconButton: {
       root: {
         '&:hover': icon.button,
@@ -41,6 +50,13 @@ export const theme = createMuiTheme({
       underline: {
         '&:not(.Mui-disabled):before, &:hover:not(.Mui-disabled):before': input.underline.default,
         '&:after': input.underline.focused
+      }
+    },
+    MuiTextField: {
+      root: {
+        '& .MuiAutocomplete-inputRoot[class*="MuiInput-root"] .MuiAutocomplete-input:first-child': {
+          padding: 0
+        }
       }
     },
     MuiInputLabel: {
@@ -64,6 +80,13 @@ export const theme = createMuiTheme({
         }
       }
     },
+    MuiFormGroup: {
+      root: {
+        '& label:not(:last-of-type)': {
+          paddingBottom: 8
+        }
+      }
+    },
     MuiPaper: {
       root: muiPaper,
       rounded: muiPaper,
@@ -81,6 +104,7 @@ export const theme = createMuiTheme({
           ...checkbox.checked
         },
         '&:hover': {
+          cursor: 'pointer',
           '& span.unchecked': {
             ...checkbox.focused
           }
@@ -90,6 +114,28 @@ export const theme = createMuiTheme({
         '&:hover': {
           backgroundColor: 'transparent'
         }
+      }
+    },
+    MuiRadio: {
+      root: {
+        padding: '0 8px 0 0'
+      },
+      colorSecondary: {
+        '&:hover': {
+          backgroundColor: 'transparent !important'
+        }
+      }
+    },
+    MuiFormControlLabel: {
+      root: {
+        marginLeft: 0,
+        marginRight: 0,
+        '&.Mui-disabled': {
+          cursor: 'not-allowed'
+        }
+      },
+      label: {
+        fontWeight: 500
       }
     },
     MuiChip: {
