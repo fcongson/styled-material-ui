@@ -118,7 +118,7 @@ export const theme = createMuiTheme({
     },
     MuiRadio: {
       root: {
-        padding: '0 8px 0 0'
+        padding: 0
       },
       colorSecondary: {
         '&:hover': {
@@ -135,7 +135,8 @@ export const theme = createMuiTheme({
         }
       },
       label: {
-        fontWeight: 500
+        fontWeight: 500,
+        paddingLeft: 8
       }
     },
     MuiChip: {
