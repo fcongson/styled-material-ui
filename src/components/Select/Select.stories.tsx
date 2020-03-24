@@ -43,6 +43,24 @@ export const SingleWithPlaceholder = () => {
   return <Select placeholder={'Placeholder'} value={value} options={options} onChange={value => setValue(value)} />
 }
 
+export const SingleGrouped = () => {
+  const [value, setValue] = useState('apple')
+  const options = [
+    { label: 'Apple', value: 'apple' },
+    { label: 'Mango', value: 'mango' },
+    { label: 'Cucumber', value: 'cucumber' },
+    { label: 'Grape', value: 'grape' },
+    { label: 'Capsicum', value: 'capsicum' }
+  ]
+  const fruits = ['apple', 'mango', 'grape']
+  const veggies = ['cucumber', 'capsicum']
+  const groupBy = (option: { label: string; value: string }) => {
+    if (fruits.includes(option.value)) return 'Fruits'
+    if (veggies.includes(option.value)) return 'Veggies'
+  }
+  return <Select value={value} options={options} groupBy={groupBy} onChange={value => setValue(value)} />
+}
+
 export const Multiple = () => {
   const [values, setValues] = useState(['lorem', 'ipsum'])
   const options = [
@@ -85,4 +103,22 @@ export const MultipleWithPlaceholder = () => {
       multiple
     />
   )
+}
+
+export const MultipleGrouped = () => {
+  const [value, setValue] = useState(['apple'])
+  const options = [
+    { label: 'Apple', value: 'apple' },
+    { label: 'Mango', value: 'mango' },
+    { label: 'Cucumber', value: 'cucumber' },
+    { label: 'Grape', value: 'grape' },
+    { label: 'Capsicum', value: 'capsicum' }
+  ]
+  const fruits = ['apple', 'mango', 'grape']
+  const veggies = ['cucumber', 'capsicum']
+  const groupBy = (option: { label: string; value: string }) => {
+    if (fruits.includes(option.value)) return 'Fruits'
+    if (veggies.includes(option.value)) return 'Veggies'
+  }
+  return <Select value={value} options={options} groupBy={groupBy} onChange={value => setValue(value)} multiple />
 }

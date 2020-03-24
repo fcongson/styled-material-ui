@@ -19,6 +19,7 @@ interface SelectProps<T extends SelectValue, U extends SelectOption> {
   placeholder?: string
   value?: T
   options?: U[]
+  groupBy?: (option: U) => string
   onChange?: (value: T) => void | undefined
   multiple?: boolean
 }
@@ -31,6 +32,7 @@ interface SelectSingleProps {
     label: string
     value: string
   }[]
+  groupBy?: (option: { label: string; value: string }) => string
   onChange?: (value: string) => void | undefined
   multiple?: false
 }
@@ -43,6 +45,7 @@ interface SelectMultipleProps {
     label: string
     value: string
   }[]
+  groupBy?: (option: { label: string; value: string }) => string
   onChange?: (value: string[]) => void | undefined
   multiple: true
 }
@@ -52,6 +55,7 @@ export const Select: <T extends SelectValue, U extends SelectOption>(props: Sele
   placeholder,
   value,
   options,
+  groupBy,
   onChange,
   multiple,
   ...restProps
@@ -63,6 +67,7 @@ export const Select: <T extends SelectValue, U extends SelectOption>(props: Sele
         placeholder={placeholder}
         value={value as string[]}
         options={options}
+        groupBy={groupBy}
         onChange={onChange as (value: string[]) => void | undefined}
         multiple
         {...restProps}
@@ -73,6 +78,7 @@ export const Select: <T extends SelectValue, U extends SelectOption>(props: Sele
         placeholder={placeholder}
         value={value as string}
         options={options}
+        groupBy={groupBy}
         onChange={onChange as (value: string) => void | undefined}
         {...restProps}
       />
@@ -85,6 +91,7 @@ export const SelectSingle: React.FC<SelectSingleProps> = ({
   placeholder,
   value,
   options,
+  groupBy,
   onChange,
   ...restProps
 }) => (
@@ -95,6 +102,7 @@ export const SelectSingle: React.FC<SelectSingleProps> = ({
       if (!!onChange) onChange(value?.value ?? '')
     }}
     options={options}
+    groupBy={groupBy}
     getOptionLabel={option => option?.label}
     getOptionSelected={(option, value) => option?.value === value?.value}
     renderInput={params => <TextField label={label} placeholder={placeholder} {...params} fullWidth />}
@@ -109,6 +117,7 @@ export const SelectMultiple: React.FC<SelectMultipleProps> = ({
   placeholder,
   value,
   options,
+  groupBy,
   onChange,
   ...restProps
 }) => (
@@ -120,6 +129,7 @@ export const SelectMultiple: React.FC<SelectMultipleProps> = ({
       if (!!onChange) onChange(value.map(({ value }: { value: string }) => value))
     }}
     options={options}
+    groupBy={groupBy}
     getOptionLabel={option => option?.label}
     getOptionSelected={(option, value) => option?.value === value?.value}
     renderOption={(option, { selected }) => (
