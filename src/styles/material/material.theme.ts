@@ -1,6 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 import { paragraph } from '../../styles'
-import { checkbox, icon, input, select, tag } from '../global.styles'
+import { checkbox, icon, input, select, tab, tag } from '../global.styles'
 
 const muiPaper = {
   ...select.options.container,
@@ -143,6 +143,43 @@ export const theme = createMuiTheme({
       root: { ...tag.root, '& svg': tag.svg },
       label: { ...tag.label },
       deleteIcon: { ...tag.delete }
+    },
+    MuiTabs: {
+      root: {
+        minHeight: 16
+      },
+      flexContainer: {
+        '& button:not(:first-of-type)': {
+          marginLeft: '24px'
+        }
+      },
+      scroller: {
+        ...tab.size,
+        ...tab.spacing
+      },
+      fixed: {
+        ...tab.size,
+        ...tab.spacing
+      },
+      indicator: {
+        ...tab.indicator
+      }
+    },
+    MuiTab: {
+      root: {
+        padding: 0,
+        minWidth: '0 !important',
+        minHeight: 16,
+        '&.Mui-selected span': {
+          ...tab.label.selected
+        }
+      },
+      textColorInherit: {
+        opacity: 1
+      },
+      wrapper: {
+        ...tab.label.unselected
+      }
     }
   }
 })

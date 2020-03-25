@@ -201,3 +201,36 @@ export const toggle = {
     }
   }
 }
+
+// tabs
+
+export const tab = {
+  label: {
+    selected: {
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: 600,
+      fontSize: '12px',
+      lineHeight: '16px',
+      color: palette['black-base']
+    },
+    unselected: {
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: 500,
+      fontSize: '12px',
+      lineHeight: '16px',
+      color: palette['stone-base']
+    }
+  },
+  indicator: {
+    height: 4,
+    backgroundColor: palette['gold-base']
+  },
+  size: {
+    height: 16
+  },
+  spacing: {
+    paddingBottom: 8
+  }
+}
