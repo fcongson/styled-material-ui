@@ -45,11 +45,27 @@ export const SingleWithPlaceholder = () => {
 
 export const SingleGrouped = () => {
   const [value, setValue] = useState('apple')
+  /**
+   * Note:
+   *
+   * the order of the options need to match the order of the groupBy
+   *
+   * in this case we have
+   *
+   *  Fruits
+   *    - Apple
+   *    - Mango
+   *    - Grape
+   *
+   *  Veggies
+   *    - Cucumber
+   *    - Capsicum
+   */
   const options = [
     { label: 'Apple', value: 'apple' },
     { label: 'Mango', value: 'mango' },
-    { label: 'Cucumber', value: 'cucumber' },
     { label: 'Grape', value: 'grape' },
+    { label: 'Cucumber', value: 'cucumber' },
     { label: 'Capsicum', value: 'capsicum' }
   ]
   const fruits = ['apple', 'mango', 'grape']
@@ -107,11 +123,27 @@ export const MultipleWithPlaceholder = () => {
 
 export const MultipleGrouped = () => {
   const [value, setValue] = useState(['apple'])
+  /**
+   * Note:
+   *
+   * the order of the options need to match the order of the groupBy
+   *
+   * in this case we have
+   *
+   *  Fruits
+   *    - Apple
+   *    - Mango
+   *    - Grape
+   *
+   *  Veggies
+   *    - Cucumber
+   *    - Capsicum
+   */
   const options = [
     { label: 'Apple', value: 'apple' },
     { label: 'Mango', value: 'mango' },
-    { label: 'Cucumber', value: 'cucumber' },
     { label: 'Grape', value: 'grape' },
+    { label: 'Cucumber', value: 'cucumber' },
     { label: 'Capsicum', value: 'capsicum' }
   ]
   const fruits = ['apple', 'mango', 'grape']
