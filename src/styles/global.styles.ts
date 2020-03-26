@@ -212,7 +212,8 @@ export const tab = {
       fontWeight: 600,
       fontSize: '12px',
       lineHeight: '16px',
-      color: palette['black-base']
+      color: palette['black-base'],
+      textTransform: 'none' as 'none'
     },
     unselected: {
       fontFamily: 'Montserrat',
@@ -220,7 +221,8 @@ export const tab = {
       fontWeight: 500,
       fontSize: '12px',
       lineHeight: '16px',
-      color: palette['stone-base']
+      color: palette['stone-base'],
+      textTransform: 'none' as 'none'
     }
   },
   indicator: {
