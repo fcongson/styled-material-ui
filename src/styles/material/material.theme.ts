@@ -52,6 +52,11 @@ export const theme = createMuiTheme({
         '&:after': input.underline.focused
       }
     },
+    MuiInputBase: {
+      input: {
+        ...input.spacing
+      }
+    },
     MuiTextField: {
       root: {
         '& .MuiAutocomplete-inputRoot[class*="MuiInput-root"] .MuiAutocomplete-input:first-child': {
