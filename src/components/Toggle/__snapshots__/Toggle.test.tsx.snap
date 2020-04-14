@@ -1,3 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toggle Renders 1`] = `ShallowWrapper {}`;
+exports[`Toggle Renders 1`] = `
+<Styled(div)>
+  <Styled(div)
+    onClick={[Function]}
+  >
+    <Styled(div)>
+      <Styled(span)
+        yes={true}
+      >
+        Yes
+      </Styled(span)>
+      <Styled(span)>
+        No
+      </Styled(span)>
+    </Styled(div)>
+    <Styled(div) />
+  </Styled(div)>
+</Styled(div)>
+`;
