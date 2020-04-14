@@ -342,7 +342,7 @@ exports[`CountrySelect Renders 1`] = `
       },
       "palette": Object {
         "action": Object {
-          "activatedOpaciy": 0.12,
+          "activatedOpacity": 0.12,
           "active": "rgba(0, 0, 0, 0.54)",
           "disabled": "rgba(0, 0, 0, 0.26)",
           "disabledBackground": "rgba(0, 0, 0, 0.12)",
