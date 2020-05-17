@@ -4,7 +4,7 @@
 
 ## Concept
 
-This project is a proof of concept for building reusable React Components from existing [Material-UI](https://material-ui.com/) React Components wrapped in custome styles.
+This project is a proof of concept for building reusable React Components from existing [Material-UI](https://material-ui.com/) React Components wrapped in custom styles.
 
 ## Structure
 
